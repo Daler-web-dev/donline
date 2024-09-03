@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
 import { BookingModule } from "./booking/booking.module";
 import { CustomerModule } from "./customer/customer.module";
-import { InventoryModule } from "./inventory/inventory.module";
 import { EmployeeModule } from "./employee/employee.module";
+import { InventoryModule } from "./inventory/inventory.module";
 import { ServiceModule } from "./service/service.module";
 import { AnalyticsModule } from "./analytics/analytics.module";
 import { UserModule } from "./user/user.module";
@@ -20,8 +20,8 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
   imports: [
     BookingModule,
     CustomerModule,
-    InventoryModule,
     EmployeeModule,
+    InventoryModule,
     ServiceModule,
     AnalyticsModule,
     UserModule,

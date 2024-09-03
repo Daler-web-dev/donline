@@ -17,6 +17,8 @@ import { Employee } from "./Employee";
 import { EmployeeCountArgs } from "./EmployeeCountArgs";
 import { EmployeeFindManyArgs } from "./EmployeeFindManyArgs";
 import { EmployeeFindUniqueArgs } from "./EmployeeFindUniqueArgs";
+import { CreateEmployeeArgs } from "./CreateEmployeeArgs";
+import { UpdateEmployeeArgs } from "./UpdateEmployeeArgs";
 import { DeleteEmployeeArgs } from "./DeleteEmployeeArgs";
 import { EmployeeService } from "../employee.service";
 @graphql.Resolver(() => Employee)
@@ -48,6 +50,35 @@ export class EmployeeResolverBase {
       return null;
     }
     return result;
+  }
+
+  @graphql.Mutation(() => Employee)
+  async createEmployee(
+    @graphql.Args() args: CreateEmployeeArgs
+  ): Promise<Employee> {
+    return await this.service.createEmployee({
+      ...args,
+      data: args.data,
+    });
+  }
+
+  @graphql.Mutation(() => Employee)
+  async updateEmployee(
+    @graphql.Args() args: UpdateEmployeeArgs
+  ): Promise<Employee | null> {
+    try {
+      return await this.service.updateEmployee({
+        ...args,
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new GraphQLError(
+          `No resource was found for ${JSON.stringify(args.where)}`
+        );
+      }
+      throw error;
+    }
   }
 
   @graphql.Mutation(() => Employee)

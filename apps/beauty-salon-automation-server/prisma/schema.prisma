@@ -21,13 +21,14 @@ model Customer {
   updatedAt DateTime @updatedAt
 }
 
-model Inventory {
+model Employee {
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
+  role      String?
   updatedAt DateTime @updatedAt
 }
 
-model Employee {
+model Inventory {
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
   updatedAt DateTime @updatedAt

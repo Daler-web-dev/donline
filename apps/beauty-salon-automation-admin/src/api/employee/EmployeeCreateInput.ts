@@ -1,1 +1,3 @@
-export type EmployeeCreateInput = {};
+export type EmployeeCreateInput = {
+  role?: string | null;
+};
