@@ -13,14 +13,14 @@ import { CustomerList } from "./customer/CustomerList";
 import { CustomerCreate } from "./customer/CustomerCreate";
 import { CustomerEdit } from "./customer/CustomerEdit";
 import { CustomerShow } from "./customer/CustomerShow";
-import { InventoryList } from "./inventory/InventoryList";
-import { InventoryCreate } from "./inventory/InventoryCreate";
-import { InventoryEdit } from "./inventory/InventoryEdit";
-import { InventoryShow } from "./inventory/InventoryShow";
 import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeCreate } from "./employee/EmployeeCreate";
 import { EmployeeEdit } from "./employee/EmployeeEdit";
 import { EmployeeShow } from "./employee/EmployeeShow";
+import { InventoryList } from "./inventory/InventoryList";
+import { InventoryCreate } from "./inventory/InventoryCreate";
+import { InventoryEdit } from "./inventory/InventoryEdit";
+import { InventoryShow } from "./inventory/InventoryShow";
 import { ServiceList } from "./service/ServiceList";
 import { ServiceCreate } from "./service/ServiceCreate";
 import { ServiceEdit } from "./service/ServiceEdit";
@@ -74,18 +74,18 @@ const App = (): React.ReactElement => {
           show={CustomerShow}
         />
         <Resource
-          name="Inventory"
-          list={InventoryList}
-          edit={InventoryEdit}
-          create={InventoryCreate}
-          show={InventoryShow}
-        />
-        <Resource
           name="Employee"
           list={EmployeeList}
           edit={EmployeeEdit}
           create={EmployeeCreate}
           show={EmployeeShow}
+        />
+        <Resource
+          name="Inventory"
+          list={InventoryList}
+          edit={InventoryEdit}
+          create={InventoryCreate}
+          show={InventoryShow}
         />
         <Resource
           name="Service"

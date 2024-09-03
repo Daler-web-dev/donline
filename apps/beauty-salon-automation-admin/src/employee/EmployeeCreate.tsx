@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Create, SimpleForm, CreateProps } from "react-admin";
+import { Create, SimpleForm, CreateProps, TextInput } from "react-admin";
 
 export const EmployeeCreate = (props: CreateProps): React.ReactElement => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <div />
+        <TextInput label="role" source="role" />
       </SimpleForm>
     </Create>
   );
