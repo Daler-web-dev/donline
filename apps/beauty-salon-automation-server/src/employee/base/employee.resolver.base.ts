@@ -96,4 +96,12 @@ export class EmployeeResolverBase {
       throw error;
     }
   }
+
+  @graphql.Query(() => String)
+  async TestGitHubSync(
+    @graphql.Args("args")
+    args: string
+  ): Promise<string> {
+    return this.service.TestGitHubSync(args);
+  }
 }

@@ -44,4 +44,7 @@ export class EmployeeServiceBase {
   ): Promise<PrismaEmployee> {
     return this.prisma.employee.delete(args);
   }
+  async TestGitHubSync(args: string): Promise<string> {
+    throw new Error("Not implemented");
+  }
 }
