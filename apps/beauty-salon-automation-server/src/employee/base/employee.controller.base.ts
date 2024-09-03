@@ -133,4 +133,21 @@ export class EmployeeControllerBase {
       throw error;
     }
   }
+
+  @common.Get("/test-github-sync")
+  @swagger.ApiOkResponse({
+    type: String,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async TestGitHubSync(
+    @common.Body()
+    body: string
+  ): Promise<string> {
+    return this.service.TestGitHubSync(body);
+  }
 }
